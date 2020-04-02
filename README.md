@@ -1,8 +1,8 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
-|mail|string|null: false, foreign_key: true , unique: true|
+|name|string|index: true, null: false, foreign_key: true|
+|mail|string|index: true, null: false, foreign_key: true , unique: true|
 ### Association
 - has_many :groups,though: :group_users
   has_many :comments
