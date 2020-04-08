@@ -7,13 +7,11 @@
     color: white;
     width: 300px;
 
-
     &__header{
       background-color: #253141;
       height: 100px;
       width: 300px;
       position: relative;
-
       &__name{
         box-sizing: border-box;
         color: white;
@@ -27,23 +25,17 @@
         right: 20px;
         display: flex;
         justify-content: space-between;
-
         &__nameName{
           width: 30px;
         }
-
         &__Icon{
           width: 30px;
           display: flex;
           .fa{
             color: white;
           }
-
           &__edit{
             padding-right: 5px;
-          }
-
-          &__cog{
           }
         }
       }
@@ -54,7 +46,6 @@
       display: flex;
       background-color:#2f3e52;
       height: calc(100vh - 100px);
-
         &__group{
           color: white;
           box-sizing: border-box;
@@ -62,7 +53,6 @@
           width: 300px;
           height: 51px;
           margin-top: 20px;
-
             &__groupName{
               width: 260px;
               height: 15px;
@@ -72,7 +62,6 @@
               margin-top: 20px;
               margin-bottom: 5px;
             }
-
             &__message{
               width: 260px;
               height: 11px;
@@ -91,8 +80,6 @@
   .chat-main{
     box-sizing: border-box;
     width: calc(100vw - 100px);
-    // display: inline-block;
-    // float: right;
 
       &__header{
         background-color: white;
@@ -100,21 +87,15 @@
         width: calc(100vw - 300px);
         display: flex;
         justify-content: space-between;
-
         &__group{
           width: 100px;
           margin-left: 40px;
-
-
-
           &__groupName{
             width: 100px;
             font-size: 20px;
             padding: 35px 0px 15px 0px;
             color: #333333
-            
           }
-
           &__groupMember{
             font-size: 12px;
             height: 12px;
@@ -122,7 +103,6 @@
             color: #999999;
           }
         }
-
         &__edit{
           height: 40px;
           width: 72px;
@@ -132,20 +112,15 @@
           margin-right: 40px;
           margin-top: 28px;
           line-height: 40px;
-          
           .a{
             text-decoration: none;
           }
-
-          
         }
       }
 
       &__messageList{
         background-color: #fafafa;
         height: calc(100vh - 100px - 90px);
-        
-
         &__userName{
           width: 250px;
           color: #333333;
@@ -155,7 +130,6 @@
           margin-left: 40px;
           display: flex;
           justify-content: space-between;
-
           &__date{
             font-size: 12px;
             color: #999999;
@@ -174,19 +148,14 @@
       height: 90px;
       position: relative;
       display: flex;
-
         &__inputSpace{
           padding: 20px 0 20px 40px;
           display: flex;
-          
-
           &__text{
-            
             .input{
               height: 50px;
               width: calc(100vw - 155px - 340px);
               padding: 0 40px 0 10px;
-              
             }
             &__image{
               position: absolute;
@@ -200,17 +169,13 @@
               .hide{
                 display: none;
               }
-
             }
           }
         }
-        
         &__send{
           padding-top: 20px;
           border: none;
           float: right;
-
-          
           .send{
             background-color: rgb(4, 161, 252);
             font-size: 16px;
