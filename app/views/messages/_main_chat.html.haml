@@ -1,0 +1,52 @@
+// ======================chat-main===========================
+
+.chat-main
+  .chat-main__header
+    .chat-main__header
+      .chat-main__header__group
+        .chat-main__header__group__groupName
+          test
+        .chat-main__header__group__groupMember
+          Member : masa
+
+      .chat-main__header__edit
+        %a= link_to 'Edit' , "#" ,class: "a"
+
+  .chat-main__messageList
+    .chat-main__messageList__userName
+      masa
+      .chat-main__messageList__userName__date
+        2020/04/08(Wed) 11:11:11
+    .chat-main__messageList__message
+      おはよう！
+    .chat-main__messageList__userName
+      masa
+      .chat-main__messageList__userName__date
+        2020/04/08(Wed) 11:11:11
+    .chat-main__messageList__message
+      おはよう！
+    .chat-main__messageList__userName
+      masa
+      .chat-main__messageList__userName__date
+        2020/04/08(Wed) 11:11:11
+    .chat-main__messageList__message
+      おはよう！
+
+
+  .chat-main__messageForm
+    .chat-main__messageForm__inputSpace
+      .chat-main__messageForm__inputSpace__text
+        %input.input{type:'text',placeholder:'type a message'}
+      .chat-main__messageForm__inputSpace__text__image
+        %label{class:'inputImage'}
+          %i.fa.fa-image 
+          %input.hide{type:'file'}
+        
+        
+        -# = link_to ""  do
+        -#   %i.fa.fa-image 
+
+    .chat-main__messageForm__send
+      %input.send{type: 'submit',value:'Send'}
+    
+        
