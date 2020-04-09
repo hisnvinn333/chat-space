@@ -4,6 +4,7 @@
 .side-bar
   .side-bar__header
     .side-bar__header__name
+      = current_user.name
       .side-bar__header__name__nameName 
         masa
       .side-bar__header__name__Icon 
@@ -11,8 +12,11 @@
           = link_to "#" do
             %i.fa.fa-edit
         .side-bar__header__name__Icon__cog
-          = link_to "#"  do
+          = link_to edit_user_path(current_user) do
             %i.fa.fa-cog 
+
+          -# = link_to "#"  do
+          -#   %i.fa.fa-cog 
 
   .side-bar__groups
     .side-bar__groups__group
