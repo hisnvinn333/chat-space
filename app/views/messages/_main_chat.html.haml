@@ -6,9 +6,9 @@
       .chat-main__header__group__groupName
         = @group.name
       .chat-main__header__group__groupMember
-        Member : masa
+        = @group.show_group_member(@group)
     .chat-main__header__edit
-      %a= link_to 'Edit' , "#" ,class: "a"
+      %a= link_to 'Edit' , edit_group_path(@group) ,class: "a"
 
   .chat-main__messageList
     - @messages.each do |message|
@@ -33,6 +33,3 @@
             = icon('fa fa-image', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'chat-main__messageForm__inputSpace__text__send'
-
-    
-   
