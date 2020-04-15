@@ -33,12 +33,22 @@
 
   .chat-main__messageForm
     .chat-main__messageForm__inputSpace
-      .chat-main__messageForm__inputSpace__text
-        %input.input{type:'text',placeholder:'type a message'}
-      .chat-main__messageForm__inputSpace__text__image
-        %label{class:'inputImage'}
-          %i.fa.fa-image 
-          %input.hide{type:'file'}
-    .chat-main__messageForm__send
-      %input.send{type: 'submit',value:'Send'}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'chat-main__messageForm__inputSpace__text', placeholder: 'type a message'
+        .chat-main__messageForm__inputSpace__text__image
+          = f.label :image, class: 'chat-main__messageForm__inputSpace__text__image' do
+            = icon('fa fa-image', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'chat-main__messageForm__inputSpace__text__send'
+
     
+    -# .chat-main__messageForm
+    -# .chat-main__messageForm__inputSpace
+    -#   .chat-main__messageForm__inputSpace__text
+    -#     %input.input{type:'text',placeholder:'type a message'}
+    -#   .chat-main__messageForm__inputSpace__text__image
+    -#     %label{class:'inputImage'}
+    -#       %i.fa.fa-image 
+    -#       %input.hide{type:'file'}
+    -# .chat-main__messageForm__send
+    -#   %input.send{type: 'submit',value:'Send'}
