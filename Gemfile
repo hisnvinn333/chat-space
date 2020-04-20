@@ -56,8 +56,3 @@ gem "font-awesome-rails"
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'pry-rails'
-<<<<<<< Updated upstream
-=======
-gem 'carrierwave'
-gem 'mini_magick'
->>>>>>> Stashed changes

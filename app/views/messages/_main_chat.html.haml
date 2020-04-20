@@ -4,41 +4,32 @@
   .chat-main__header
     .chat-main__header__group
       .chat-main__header__group__groupName
-        test
+        = @group.name
       .chat-main__header__group__groupMember
-        Member : masa
+        = @group.show_group_member(@group)
     .chat-main__header__edit
-      %a= link_to 'Edit' , "#" ,class: "a"
+      %a= link_to 'Edit' , edit_group_path(@group) ,class: "a"
 
   .chat-main__messageList
-    .chat-main__messageList__userName
-      masa
-      .chat-main__messageList__userName__date
-        2020/04/08(Wed) 11:11:11
-    .chat-main__messageList__message
-      おはよう！
-    .chat-main__messageList__userName
-      masa
-      .chat-main__messageList__userName__date
-        2020/04/08(Wed) 11:11:11
-    .chat-main__messageList__message
-      おはよう！
-    .chat-main__messageList__userName
-      masa
-      .chat-main__messageList__userName__date
-        2020/04/08(Wed) 11:11:11
-    .chat-main__messageList__message
-      おはよう！
+    - @messages.each do |message|
+      .chat-main__messageList__userName{data: {message: {id: message.id}}}
+        = message.user.name
+        .chat-main__messageList__userName__date
+          = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+      .chat-main__messageList__message
+        = message.content
+      = image_tag "#{message.image}" , class: "chat-main__messageList__message__image" if message.image
 
+  -# .messages
+  -#     = render @messages
+    
 
   .chat-main__messageForm
     .chat-main__messageForm__inputSpace
-      .chat-main__messageForm__inputSpace__text
-        %input.input{type:'text',placeholder:'type a message'}
-      .chat-main__messageForm__inputSpace__text__image
-        %label{class:'inputImage'}
-          %i.fa.fa-image 
-          %input.hide{type:'file'}
-    .chat-main__messageForm__send
-      %input.send{type: 'submit',value:'Send'}
-    
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'chat-main__messageForm__inputSpace__text', placeholder: 'type a message'
+        .chat-main__messageForm__inputSpace__text__image
+          = f.label :image, class: 'chat-main__messageForm__inputSpace__text__image' do
+            = icon('fa fa-image', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'chat-main__messageForm__inputSpace__text__send'
