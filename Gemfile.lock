@@ -44,6 +44,7 @@ GEM
     bcrypt (3.1.13)
     bindex (0.8.1)
     builder (3.2.4)
+    byebug (11.1.2)
 
     carrierwave (2.1.0)
       activemodel (>= 5.0.0)
@@ -195,6 +196,8 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+      thread_safe (~> 0.1)
+    tzinfo (1.2.7)
 
       thread_safe (~> 0.1)
     uglifier (4.2.0)
