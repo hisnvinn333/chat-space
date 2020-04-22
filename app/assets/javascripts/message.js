@@ -1,6 +1,6 @@
 $(function(){
-  function buildHTML(message) {
-   if ( message.image ) {
+  function buildHTML(message){
+   if ( message.image ){
      var html =
       `<div class="chat-main__messageList__userName" data-message-id="${message.id}" >
         ${message.user_name}
@@ -33,15 +33,15 @@ $(function(){
     var url = $(this).attr('action');
     $.ajax({
       url: url,
-      type: "POST",  
-      data: formData,  
+      type: "POST",
+      data: formData,
       dataType: 'json',
       processData: false,
       contentType: false
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.chat-main__messageList').append(html)
+      $('.chat-main__messageList').append(html);
       $('form')[0].reset();
       $('.chat-main__messageForm__inputSpace__text__send').prop('disabled', false);
       $('.chat-main__messageList').animate({scrollTop: $('.chat-main__messageList')[0].scrollHeight});
